@@ -4,8 +4,9 @@ import { type loader } from './__root.server.tsx'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import Document from './components/shared-layout/Document.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
-import portrait1 from '~/assets/jpg/meditation.jpg'
+import headshot from '~/assets/jpg/meditation.jpg'
 import rootLinkElements from './utils/providers/rootLinkElements.ts'
+import { RiTwitterXFill, RiLinkedinBoxFill } from 'react-icons/ri'
 
 export const links: Route.LinksFunction = () => {
 	return rootLinkElements
@@ -27,10 +28,27 @@ export default function App() {
 							Welcome to Epic News, where the latest developments in tech are
 							found.
 						</p>
-						<button className="rounded-md bg-blue-500 px-4 py-2 text-white md:px-6 md:py-3 lg:px-8 lg:py-4">
-							Learn More
-						</button>
-						<img src={portrait1} alt="portrait1" />
+						<div className="w-fit rounded-lg bg-slate-800 p-8">
+							<img
+								src={headshot}
+								alt="An employee"
+								className="mx-auto h-64 w-64 rounded-full"
+							/>
+
+							<div className="pt-6">
+								<h3 className="font-semi-bold text-center text-white">
+									Leonard Krasner
+								</h3>
+								<p className="pt-1 text-center text-slate-400">
+									Senior Designer
+								</p>
+
+								<div className="flex justify-center gap-4 pt-6 text-slate-400">
+									<RiTwitterXFill />
+									<RiLinkedinBoxFill />
+								</div>
+							</div>
+						</div>
 					</main>
 				</div>
 			</div>
