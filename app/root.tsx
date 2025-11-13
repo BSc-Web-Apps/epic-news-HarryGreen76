@@ -10,6 +10,8 @@ import rootLinkElements from './utils/providers/rootLinkElements.ts'
 import headshot2 from '~/assets/jpg/Ash.jpg'
 import headshot1 from '~/assets/jpg/Ben.jpg'
 import headshot from '~/assets/jpg/Daniel.jpg'
+import HeaderWithSearch from './components/organisms/HeaderWithSearch'
+import FooterLogoCentre from './components/organisms/Footer/FooterLogoCentre.tsx'
 
 export const links: Route.LinksFunction = () => {
 	return rootLinkElements
@@ -53,6 +55,7 @@ export default function App() {
 	return (
 		<Document theme={theme} nonce={nonce} honeyProps={data?.honeyProps}>
 			<div className="flex h-screen flex-col justify-between">
+				<HeaderWithSearch />
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
 						<h1 className="text-mega text-fuchsia-700">Your Journey Begins!</h1>
@@ -84,6 +87,7 @@ export default function App() {
 				<div className="container flex justify-between pb-5">
 					<ThemeSwitch userPreference={data?.requestInfo.userPrefs.theme} />
 				</div>
+				<FooterLogoCentre></FooterLogoCentre>
 			</div>
 		</Document>
 	)
