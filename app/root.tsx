@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router'
 import { type Route } from './+types/root.ts'
 import { type loader } from './__root.server.tsx'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
+import FooterLogoCentre from './components/organisms/Footer/FooterLogoCentre.tsx'
+import HeaderWithSearch from './components/organisms/HeaderWithSearch'
 import Document from './components/shared-layout/Document.tsx'
 import { ThemeSwitch, useTheme } from './routes/resources+/theme-switch.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
@@ -10,8 +12,6 @@ import rootLinkElements from './utils/providers/rootLinkElements.ts'
 import headshot2 from '~/assets/jpg/Ash.jpg'
 import headshot1 from '~/assets/jpg/Ben.jpg'
 import headshot from '~/assets/jpg/Daniel.jpg'
-import HeaderWithSearch from './components/organisms/HeaderWithSearch'
-import FooterLogoCentre from './components/organisms/Footer/FooterLogoCentre.tsx'
 
 export const links: Route.LinksFunction = () => {
 	return rootLinkElements
