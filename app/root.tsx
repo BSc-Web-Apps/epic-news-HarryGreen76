@@ -1,10 +1,11 @@
 import { RiLinkedinBoxFill, RiTwitterXFill } from 'react-icons/ri'
-import { useLoaderData } from 'react-router'
+import { Link, useLoaderData } from 'react-router'
 import { type Route } from './+types/root.ts'
 import { type loader } from './__root.server.tsx'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import FooterLogoCentre from './components/organisms/Footer/FooterLogoCentre.tsx'
 import HeaderWithSearch from './components/organisms/HeaderWithSearch'
+import HeroCallToAction from './components/organisms/Hero/HeroCallToAction.tsx'
 import Document from './components/shared-layout/Document.tsx'
 import { ThemeSwitch, useTheme } from './routes/resources+/theme-switch.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
@@ -12,6 +13,7 @@ import rootLinkElements from './utils/providers/rootLinkElements.ts'
 import headshot2 from '~/assets/jpg/Ash.jpg'
 import headshot1 from '~/assets/jpg/Ben.jpg'
 import headshot from '~/assets/jpg/Daniel.jpg'
+import Hero2 from '~/assets/jpg/hero-2.jpg'
 
 export const links: Route.LinksFunction = () => {
 	return rootLinkElements
@@ -60,6 +62,24 @@ export default function App() {
 					<main className="grid h-full place-items-center">
 						<h1 className="text-5xl text-fuchsia-700">Your Journey Begins!</h1>
 
+						<div className="w-full py-16">
+							<HeroCallToAction image={Hero2} imageRight={true}>
+								<div className="flex flex-col gap-8 px-8">
+									<h2 className="text-h2">Welcome to Epic News</h2>
+									<p className="text-lg">
+										Keep up to date with the latest tech news.
+									</p>
+									<Link
+										to="/signin"
+										className="mt-2 inline-block rounded bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+										aria-label="Sign in to Epic News"
+									>
+										Sign in
+									</Link>
+								</div>
+							</HeroCallToAction>
+						</div>
+
 						<div className="flex gap-4">
 							<TeamMemberCard
 								name="Daniel Reis"
@@ -78,7 +98,7 @@ export default function App() {
 							/>
 						</div>
 
-						<p className="text-base text-gray-600 md:text-lg lg:text-2xl">
+						<p className="text-base text-gray-600 md:text-lg lg:text-xl">
 							Welcome to Epic News, where the latest developments in tech are
 							found.
 						</p>
