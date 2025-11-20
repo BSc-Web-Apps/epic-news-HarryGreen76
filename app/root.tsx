@@ -58,11 +58,11 @@ export default function App() {
 				<HeaderWithSearch />
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
-						<h1 className="text-mega text-fuchsia-700">Your Journey Begins!</h1>
+						<h1 className="text-5xl text-fuchsia-700">Your Journey Begins!</h1>
 
 						<div className="flex gap-4">
 							<TeamMemberCard
-								name="Daniel Kirk"
+								name="Daniel Reis"
 								role="Senior Designer"
 								imageSrc={headshot}
 							/>
