@@ -37,7 +37,7 @@ export function TeamMemberCard({ name, role, imageSrc }: TeamMemberCardProps) {
 			/>
 
 			<div className="pt-6">
-				<h3 className="font-semi-bold text-center text-white">{name}</h3>
+				<h3 className="font-semi-bold text-grey text-center">{name}</h3>
 				<p className="pt-1 text-center text-slate-400">{role}</p>
 
 				<div className="flex justify-center gap-4 pt-6 text-slate-400">
