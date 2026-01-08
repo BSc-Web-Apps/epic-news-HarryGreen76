@@ -18,6 +18,12 @@ export default function HeaderWithSearch() {
 					<img src={logo} alt="Epic News Logo" className="w-16" />
 					<span className="text-foreground text-sm">Epic News</span>
 				</div>
+				<Link
+					to="/news"
+					className="text-muted-foreground hover:text-foreground text-sm font-semibold transition"
+				>
+					News
+				</Link>
 				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 					{searchBar}
 				</div>

@@ -4,6 +4,7 @@ import { requireUserId } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { type Route } from './+types/articles.$articleId_.edit.ts'
 import { ArticleEditor } from './__article-editor.tsx'
+import { useLoaderData } from 'react-router'
 
 export { action } from './__article-editor.server.tsx'
 
