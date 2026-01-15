@@ -90,7 +90,7 @@ export default function Index() {
 				</HeroCallToAction>
 			</div>
 			<div className="container">
-				<h2 className="text-h2">Technology</h2>
+				<h2 className="text-h2 m-5">Technology</h2>
 				<div className="flex">
 					{hasTechArticles ? (
 						techArticles.map((article) => (
@@ -107,7 +107,7 @@ export default function Index() {
 					)}
 				</div>
 
-				<h2 className="text-h2">Entertainment </h2>
+				<h2 className="text-h2 m-5">Entertainment </h2>
 				<div className="flex">
 					{hasEntArticles ? (
 						enterArticles.map((article) => (
@@ -124,7 +124,7 @@ export default function Index() {
 					)}
 				</div>
 
-				<h2 className="text-h2">Business</h2>
+				<h2 className="text-h2 m-5">Business</h2>
 				<div className="flex">
 					{hasBusArticles ? (
 						businessArticles.map((article) => (
