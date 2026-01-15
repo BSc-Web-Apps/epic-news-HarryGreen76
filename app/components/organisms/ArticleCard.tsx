@@ -33,7 +33,7 @@ export default function ArticleCard({
 
 	return (
 		<Link to={`/article/${articalId}`}>
-			<div className="cursor-pointer transition-all duration-500 hover:scale-105">
+			<div className="mr-5 cursor-pointer transition-all duration-500 hover:scale-105">
 				<div>
 					<img
 						src={imageSrc}

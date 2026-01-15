@@ -70,22 +70,15 @@ export default function Index() {
 
 	return (
 		<main className="grid h-full place-items-center">
-			<h1 className="text-5xl text-fuchsia-700">Your Journey Begins!</h1>
+			<h1 className="text-5xl text-red-700">Welcome To Epic News</h1>
 
 			<div className="w-full py-16">
 				<HeroCallToAction image={Hero2} imageRight={true}>
 					<div className="flex flex-col gap-8 px-8">
-						<h2 className="text-h2">Welcome to Epic News</h2>
-						<p className="text-lg">
-							Keep up to date with the latest tech news.
-						</p>
-						<Link
-							to="/login"
-							className="mt-2 inline-block rounded bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-							aria-label="Sign in to Epic News"
-						>
-							Sign in
-						</Link>
+						<h2 className="text-h2">
+							Keep up to date with the latest technology, Entertainment and
+							Business news.
+						</h2>
 					</div>
 				</HeroCallToAction>
 			</div>
