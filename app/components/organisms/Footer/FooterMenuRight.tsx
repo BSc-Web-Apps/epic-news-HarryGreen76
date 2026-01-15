@@ -5,7 +5,7 @@ import { Button } from '#app/components/ui/button.tsx'
 import { type FooterProps } from './FooterBasic'
 
 const FooterMenuRight = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'Epic News',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (

@@ -25,6 +25,12 @@ export default function HeaderWithSearch() {
 				>
 					News
 				</Link>
+				<Link
+					to="/about"
+					className="text-muted-foreground hover:text-foreground text-sm font-semibold transition"
+				>
+					About
+				</Link>
 				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 					{isAdminUser && (
 						<Link

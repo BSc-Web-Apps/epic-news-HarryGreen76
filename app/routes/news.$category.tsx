@@ -1,35 +1,55 @@
 import { invariant } from '@epic-web/invariant'
+
 import { type LoaderFunctionArgs, data, useLoaderData } from 'react-router'
+import ArticleCard from '~/components/organisms/ArticleCard.tsx'
+import { prisma } from '~/utils/db.server.ts'
 import { toTitleCase } from '~/utils/stringUtils.ts'
 
+//server rendered code (loader)
 export async function loader({ params }: LoaderFunctionArgs) {
 	const { category } = params
 
 	invariant(typeof category === 'string', 'Category not found')
-
 	const categoryTitle = toTitleCase(category)
 
-	return data({ categoryTitle })
-}
-const WireframeBlock = () => {
-	return (
-		<div className="h-72 animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700" />
-	)
+	const filteredArticles = await prisma.article.findMany({
+		where: {
+			category: {
+				slug: category, // Retrieves only articles in the specified category
+			},
+		},
+		select: {
+			id: true,
+			title: true,
+			category: { select: { name: true } },
+			images: { select: { id: true, objectKey: true } },
+		},
+	})
+
+	return data({ categoryTitle, filteredArticles })
 }
 
 export default function NewsCategoryPage() {
-	const { categoryTitle } = useLoaderData<typeof loader>()
+	const { categoryTitle, filteredArticles } = useLoaderData<typeof loader>()
+	const hasArticles = filteredArticles.length > 0
 
 	return (
 		<div className="container py-16">
-			<h2 className="text-h2">{categoryTitle}</h2>
-
-			<div className="ggrid-cols-1 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-				<WireframeBlock />
-				<WireframeBlock />
-				<WireframeBlock />
-				<WireframeBlock />
-				<WireframeBlock />
+			<h2 className="text-h2 mb-15">{categoryTitle}</h2>
+			<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+				{hasArticles ? (
+					filteredArticles.map((article) => (
+						<ArticleCard
+							key={article.id}
+							articalId={article.id}
+							title={article.title}
+							category={article.category?.name}
+							objectKey={article.images[0]?.objectKey}
+						/>
+					))
+				) : (
+					<h2>There are no published {categoryTitle} articles...</h2>
+				)}
 			</div>
 		</div>
 	)
