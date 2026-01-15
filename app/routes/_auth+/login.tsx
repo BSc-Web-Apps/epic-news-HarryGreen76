@@ -21,13 +21,6 @@ import { getErrorMessage, useIsPending } from '#app/utils/misc.tsx'
 import { PasswordSchema, UsernameSchema } from '#app/utils/user-validation.ts'
 import { type Route } from './+types/login.ts'
 import { handleNewSession } from './login.server.ts'
-import { AuthenticityTokenInput } from 'remix-utils/csrf/react'
-import { CSRFError } from 'remix-utils/csrf/server'
-import { csrf } from '~/utils/csrf.server'
-import {
-	createToastHeaders,
-	redirectWithToast,
-} from '#app/utils/toast.server.ts'
 
 export const handle: SEOHandle = {
 	getSitemapEntries: () => null,

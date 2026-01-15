@@ -5,8 +5,8 @@ import {
 	MdOutlineDesktopMac,
 	MdOutlineNewspaper,
 } from 'react-icons/md'
-import { getArticleImgSrc } from '~/utils/misc.tsx'
 import siteLogo from '~/assets/png/epic-news-logo.png'
+import { getArticleImgSrc } from '~/utils/misc.tsx'
 
 interface ArticleCardProps {
 	title: string

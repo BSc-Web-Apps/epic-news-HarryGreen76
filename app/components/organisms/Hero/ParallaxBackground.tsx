@@ -1,3 +1,5 @@
+import { Parallax, useParallaxController } from 'react-scroll-parallax'
+
 interface ParallaxBackgroundProps {
 	description?: string
 	title?: string
