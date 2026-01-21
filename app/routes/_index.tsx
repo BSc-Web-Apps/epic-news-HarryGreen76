@@ -134,9 +134,7 @@ export default function Index() {
 					)}
 				</div>
 
-				<p className="text-base text-gray-600 md:text-lg lg:text-xl">
-					Welcome to Epic News, where the latest developments in tech are found.
-				</p>
+				<p className="text-base text-gray-600 md:text-lg lg:text-xl"></p>
 			</div>
 		</main>
 	)
