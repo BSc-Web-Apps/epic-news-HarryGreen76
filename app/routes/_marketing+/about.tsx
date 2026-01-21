@@ -34,7 +34,7 @@ export function TeamMemberCard({ name, role, imageSrc }: TeamMemberCardProps) {
 export default function Index() {
 	return (
 		<main className="grid h-full place-items-center">
-			<h1 className="text-black-700 text-5xl">Meet the team!</h1>
+			<h1 className="text-5xl text-red-700">Meet the team!</h1>
 
 			<div className="flex gap-4">
 				<TeamMemberCard
@@ -54,7 +54,7 @@ export default function Index() {
 				/>
 			</div>
 
-			<p className="text-base text-gray-600 md:text-lg lg:text-xl">
+			<p className="text-base text-red-600 md:text-lg lg:text-xl">
 				These guys make up the dream team!
 			</p>
 		</main>

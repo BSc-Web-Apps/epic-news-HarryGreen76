@@ -16,8 +16,9 @@ export default function HeaderWithSearch() {
 		<header className="container py-6">
 			<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 				<div className="flex items-center gap-4">
-					<img src={logo} alt="Epic News Logo" className="w-16" />
-					<span className="text-foreground text-sm">Epic News</span>
+					<Link to="/" className="flex w-20 items-center justify-center">
+						<img src={logo} />
+					</Link>
 				</div>
 				<Link
 					to="/news"
